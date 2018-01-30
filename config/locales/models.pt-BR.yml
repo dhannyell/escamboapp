@@ -1,0 +1,30 @@
+"pt-BR":
+  activerecord:
+    models:
+      admin:
+        one: Administrador
+        other: Administradores
+      category:
+        one: Categoria
+        other: Categorias
+      ad:
+        one: Anúncio
+        other: Anúncios
+    attributes:
+      admin:
+        name: Nome
+        email: Email
+        password: Senha
+        password_confirmation: Confirmação da Senha
+        role: Tipo
+      ad:
+        title: Título
+        description: Descrição
+        description_md: Descrição/Markdown
+        description_short: Pequena Descrição
+        price: Preço
+        picture: Imagem
+        finish_date: Data Final
+        category: Categoria
+
+        

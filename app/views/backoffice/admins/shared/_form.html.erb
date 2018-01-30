@@ -1,0 +1,52 @@
+<h1 class="page-header">Categorias</h1>
+
+  <%if @admin.errors.any?%>
+    <%@admin.errors.full_messages.each do |message|%>
+    <script>
+    $.notify("<%=message%>");
+    </script>
+    <%end%>
+  <%end%>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <%=action%>
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+      <div class="col-lg-6">
+        <%= form_for (['backoffice',@admin]) do |f|%>
+        <div class="form-group">
+          <%= f.label :name%>
+          <%= f.text_field :name, class:"form-control", placeholder:"Fulano Silva"%>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <%= f.text_field :email, class:"form-control", placeholder:"fulano@fulano.com"%>
+        </div>
+        <div class="form-group">
+          <%= f.label :password%>
+          <%= f.password_field :password, class:"form-control", placeholder:"****"%>
+        </div>
+        <div class="form-group">
+          <%=f.label :password_confirmation%>
+          <%= f.password_field :password_confirmation, class:"form-control", placeholder:"****"%>
+        </div>
+        <%if policy(@admin).edit?%>
+          <div class="form-group">
+            <%= f.label :role%>
+            <%#= f.select :role, [['Acesso Completo','full_access'],['Acesso Restrito','restricted_access']],{}, {class: "form-control"}%>
+            <%= f.collection_radio_buttons(:role, options_for_role, :id, :description) do |b|%>
+              <div class="radio">
+                <%=b.label {b.radio_button + b.text}%>
+              </div>
+            <%end%>
+          </div>
+        <%end%>
+        <%= f.submit "Salvar", class: "btn btn-default"%>
+        <%end%>
+    </div>
+  </div>
+  <!-- /.panel-body -->
+</div>
+

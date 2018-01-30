@@ -1,0 +1,1 @@
+web: rbenv sudo rails s
