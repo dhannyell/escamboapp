@@ -22,7 +22,7 @@ gem 'lerolero_generator'
 #Integration of RubyMoney - Money with Rails
 gem 'money-rails', '~>1'
 #Easy file attachment management for ActiveRecord https://thoughtbot.com/open-source
-gem 'paperclip', '~> 5.0.0'
+gem 'paperclip', '~> 5.2.1'
 #The safe Markdown parser, reloaded.
 gem 'redcarpet'
 #FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord
