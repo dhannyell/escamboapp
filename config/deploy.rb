@@ -41,7 +41,7 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/syst
 set :keep_releases, 5
 
 
-set :rbenv_type, :root # or :system, depends on your rbenv setup
+set :rbenv_type, :system # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.3.0'
 set :rbenv_path, '/root/.rbenv'
 
