@@ -20,6 +20,11 @@ class Ad < ActiveRecord::Base
   scope :to_the, ->(member) { where(member: member) }
   scope :where_category, -> (id) {where(category: id)}
   scope :search, -> (query, page) {where("title LIKE ?", "%#{query}%").page(page).per(QTT_PER_PAGE)}
+  scope :by_category, -> (id, page) { where(category: id).page(page).per(QTT_PER_PAGE) }
+  scope :random_carousel, -> (qtd) {limit(qtd).order("RANDOM()")}
+
+  #gem Ratyraze
+  ratyrate_rateable 'quality'
 
   #gem money-rails
   monetize :price_cents

@@ -33,6 +33,7 @@ gem 'wiselinks'
 gem 'kaminari'
 #I18n for gem kaminari
 gem 'kaminari-i18n'
+gem 'ratyrate'
 
 source 'https://rails-assets.org' do
   #Bootstrap for rails
@@ -47,6 +48,8 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap-markdown'
   #Plugin for Bootstrap Markdown
   gem 'rails-assets-marked'
+  #jQuery Raty - A Star Rating Plugin
+  gem 'rails-assets-raty'
 end
 
 # Use sqlite3 as the database for Active Record

@@ -185,6 +185,8 @@ GEM
       rails-assets-jquery (>= 1.10.2)
     rails-assets-jquery (3.2.1)
     rails-assets-marked (0.3.12)
+    rails-assets-raty (2.8.0)
+      rails-assets-jquery (>= 3.2.1, < 4)
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
     rails-dom-testing (1.0.9)
@@ -207,6 +209,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (12.3.0)
+    ratyrate (1.2.2.alpha)
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -288,8 +291,10 @@ DEPENDENCIES
   rails-assets-bootstrap-markdown!
   rails-assets-bootstrap.growl!
   rails-assets-marked!
+  rails-assets-raty!
   rails-erd
   rails-i18n
+  ratyrate
   redcarpet
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

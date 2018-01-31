@@ -35,9 +35,15 @@ puts "Cadastrando Usuario Padrão..."
 puts "Cadastrando Usuario Padrão...[OK]"
 
 puts "Cadastrando Membro Padrão..."
-  Member.create!(#name: "Membro ",
+    member = Member.new(#name: "Membro ",
                 email: "membro@membro.com",
                 password: "123456",
                 password_confirmation: "123456",
                 )
+    member.build_profile_member
+    member.profile_member.first_name = "root"
+    member.profile_member.second_name = "super"
+
+    member.save!
+
 puts "Cadastrando Membro Padrão...[OK]"

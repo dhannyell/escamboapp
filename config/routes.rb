@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  post '/rate' => 'rater#create', :as => 'rate'
   get 'backoffice', to: 'backoffice/dashboard#index'
 
   namespace :backoffice do
@@ -18,9 +19,10 @@ Rails.application.routes.draw do
     namespace :profile do
       resources :dashboard, only: [:index]
       resources :ads
+      resources :my_data, only: [:edit, :update]
     end
 
-    resources :ad_detail, only: [:show]
+    resources :ad_detail, only: [:index, :show]
     resources :categories, only: [:show]
     resources :comments, only: [:create]
   end
@@ -28,7 +30,9 @@ Rails.application.routes.draw do
   get 'admin', to: 'backoffice/dashboard#index'
 
   devise_for :admins, :skip => [:registrations]
-  devise_for :members, controllers: { sessions: 'members/sessions' }
+  devise_for :members, controllers: { 
+    sessions: 'members/sessions',
+    registrations: 'members/registrations'}
 
 
   root 'site/home#index'
