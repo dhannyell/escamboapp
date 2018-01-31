@@ -43,6 +43,7 @@ set :keep_releases, 5
 
 set :rbenv_type, :user # or :system, depends on your rbenv setup
 set :rbenv_ruby, '2.3.0'
+set :rbenv_path, '/root/.rbenv'
 
 # in case you want to set ruby version from the file:
 # set :rbenv_ruby, File.read('.ruby-version').strip
