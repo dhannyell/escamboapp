@@ -22,7 +22,7 @@ class Ad < ActiveRecord::Base
   scope :search, -> (query, page) {where("title LIKE ?", "%#{query}%").page(page).per(QTT_PER_PAGE)}
   scope :by_category, -> (id, page) { where(category: id).page(page).per(QTT_PER_PAGE) }
   scope :random_carousel, -> (qtd) {
-    Rails.env.production?
+    if Rails.env.production?
       limit(qtd).order("RAND()")
     else
       limit(qtd).order("RAND()")
