@@ -34,6 +34,9 @@ gem 'kaminari'
 #I18n for gem kaminari
 gem 'kaminari-i18n'
 gem 'ratyrate'
+#Faker data
+gem 'faker'
+gem 'doctor_ipsum'
 
 source 'https://rails-assets.org' do
   #Bootstrap for rails
@@ -93,10 +96,8 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  #Faker data
-  gem 'faker'
+
   gem 'mailtrap'
-  gem 'doctor_ipsum'
   gem 'capistrano', '~> 3.7'
   gem 'capistrano-bundler', '~> 1.2'
   gem 'capistrano-rails', '~> 1.2'

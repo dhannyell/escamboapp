@@ -7,7 +7,10 @@ namespace :dev do
 
     puts "Configurando Ambiente de Desenvolvimento..."
 
-    puts "Apagando Images /Public/System #{%x(rm -rf #{images_path})}"
+    if Rails.env.development?
+      puts "Apagando Images /Public/System #{%x(rm -rf #{images_path})}"
+    end
+    
     puts "Apagando BD... #{%x(rake db:drop)}"
     puts "Criando BD... #{%x(rake db:create)}"
     puts %x(rake db:migrate)
