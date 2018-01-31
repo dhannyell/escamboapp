@@ -21,12 +21,14 @@ class Ad < ActiveRecord::Base
   scope :where_category, -> (id) {where(category: id)}
   scope :search, -> (query, page) {where("title LIKE ?", "%#{query}%").page(page).per(QTT_PER_PAGE)}
   scope :by_category, -> (id, page) { where(category: id).page(page).per(QTT_PER_PAGE) }
-  scope :random_carousel, -> (qtd) {
+  scope :random_carousel, ->(quantity) {
     if Rails.env.production?
-      limit(qtd).order("RAND()")
+      limit(quantity).order("RAND()") # MySQL
     else
-      limit(qtd).order("RAND()")
-    }
+      limit(quantity).order("RANDOM()") # SQLite
+    end
+  }
+
   #gem Ratyraze
   ratyrate_rateable 'quality'
 
