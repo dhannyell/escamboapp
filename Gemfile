@@ -97,5 +97,14 @@ group :development do
   gem 'faker'
   gem 'mailtrap'
   gem 'doctor_ipsum'
+  gem 'capistrano', '~> 3.7'
+  gem 'capistrano-bundler', '~> 1.2'
+  gem 'capistrano-rails', '~> 1.2'
+  gem 'capistrano-rvm'
+end
+
+group :production do
+  #MySQL Adapter
+  gem 'mysql2', '~> 0.3.18'
 end
 
