@@ -19,7 +19,7 @@
             <% end %>
         <% else %>
             <div class="text-right">
-                <%= link_to "Processando...", '#', class: "btn btn-warning", disabled: "disabled" %>
+                <%= link_to "#{@ad.status_i18n}", '#', class:"btn btn-success", disabled: true %>
             </div>
         <% end %>
 
