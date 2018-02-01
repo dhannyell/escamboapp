@@ -3,6 +3,26 @@
     <%= image_tag @ad.picture.url(:large), class:"img-responsive" %>
     <div class="caption-full">
         <h4 class="pull-right"><%= humanized_money_with_symbol @ad.price %></h4>
+
+        <% if @ad.active? %>
+            <% if member_signed_in? %>
+            <div class="text-right">
+                <%= form_tag(checkout_payments_path) do  %>
+                    <%= hidden_field_tag :ad_id, @ad.id %>
+                    <%= submit_tag "Comprar", class: "btn btn-success", data: {confirm: "Você tem certeza?"} %>
+                <%end%>
+            </div>
+            <% else %>
+            <div class="text-right">
+                <%= link_to "Entre para comprar", new_member_session_path, class: "btn btn-warning" %>
+            </div>
+            <% end %>
+        <% else %>
+            <div class="text-right">
+                <%= link_to "Processando...", '#', class: "btn btn-warning", disabled: "disabled" %>
+            </div>
+        <% end %>
+
         <h4><a href="#"><%= @ad.title %></a>
         </h4>
         <%= @ad.description.html_safe %>
@@ -21,7 +41,7 @@
     <% if member_signed_in? %>
       <div class="text-right">
           <button type="button" class="btn btn-success" data-toggle="modal" data-target="#comentModal">
-            <%= t('labels.let_your_comment') %>
+            <%= "Faça um comentario" %>
           </button>
       </div>
     <% else %>

@@ -37,6 +37,8 @@ gem 'ratyrate'
 #Faker data
 gem 'faker'
 gem 'doctor_ipsum'
+#Biblioteca de integração com o pagseguro
+gem 'pagseguro-oficial', '~> 2.5.0'
 
 source 'https://rails-assets.org' do
   #Bootstrap for rails
@@ -88,6 +90,8 @@ group :development, :test do
   gem 'better_errors'
   # Generate Entity-Relationship Diagrams for Rails applications
   gem 'rails-erd'
+  #Rack Middleware for handling Cross-Origin Resource Sharing (CORS), which makes cross-origin AJAX possible.
+  gem 'rack-cors'
 end
 
 group :development do
